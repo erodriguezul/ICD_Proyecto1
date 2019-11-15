@@ -4,7 +4,8 @@
 def clean_format(cadena):
     nueva_cadena = cadena.lower().replace(".","").replace(",","").\
     replace("á","a").replace("é","e").replace("í","i").\
-    replace("ó","o").replace("ú","u").replace(" ","_")
+    replace("ó","o").replace("ú","u").replace(" ","_").\
+    replace("ñ", "ni")
     return nueva_cadena
 
 #Función para formatear un arreglo con los encabezados de las columnas
@@ -23,4 +24,3 @@ def clean_column_headers(df):
     for i in range(0,len(df.columns)):
         df.rename(columns =  {encabezados[i]: new_column_headers[i]}, inplace = True)
     return df
-    
